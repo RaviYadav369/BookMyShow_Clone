@@ -12,3 +12,15 @@ body{
     height: 100vh;
     
 }
+.name-section{
+    margin-top: 15px;
+;
+}
+.aside-element>a{
+    display: flex;
+    justify-content: space-between;
+}
+.aside-element>a>img{
+    height: 48px;
+    width: 48px
+}

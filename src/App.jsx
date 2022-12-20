@@ -4,7 +4,6 @@ import './App.css'
 import { css } from "@emotion/react"
 import { Outlet } from 'react-router-dom'
 import { ContactList } from "./ContactList"
-
 function Header({ onSearch }) {
 
   // const [searchText, setsearchText] = useState([])
@@ -14,6 +13,11 @@ function Header({ onSearch }) {
   // }
 
   const searchElementRef = useRef(null)
+
+  function onSubmit(e) {
+    e.preventDefault()
+    onSearch(searchElementRef.current.value)
+  }
 
   return (
     <header css={css`
@@ -25,19 +29,23 @@ function Header({ onSearch }) {
           display:flex;
           justify-content:space-between;      
         
-        `}>
-        <input  ref={searchElementRef}
-         css={css`
+        `}
+        onSubmit={onSubmit}   >
+        <input ref={searchElementRef}
+          css={css`
             padding:8px;
-        `} type="text"  />
-        <button onClick={() => onSearch(searchElementRef.current.value)}>Search</button>
+        `} type="text" />
+        <button >Search</button>
       </form>
     </header>
   )
 }
 
 function SideNav() {
-
+  const [searchText, setSearchText] = useState("");
+  function onSearch(text) {
+    setSearchText(text);
+  }
 
   return (
     <aside css={css`
@@ -46,14 +54,14 @@ function SideNav() {
               display:grid;
               grid-template-rows:auto 1fr auto;
      `}>
-      <Header />
+      <Header onSearch={onSearch} />
       <section css={css`
                padding:16px;
-               max-height:450px;
+               max-height:600px;
                overflow:auto;
       `}>
         list of contacts
-        <ContactList />
+        <ContactList searchText={searchText} />
 
 
       </section>
@@ -67,7 +75,7 @@ function SideNav() {
 
 function Contents() {
   return (
-    <section>
+    <section css={css`width:90%; margin:auto;`}>
       <Outlet />
     </section>
   )

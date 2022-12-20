@@ -5,3 +5,7 @@ export async function loadContacts() {
     const result = await fetch(URL)
     return (await result.json())?.results;
 }
+export async function loadContact (contactId) {
+const contacts = await loadContacts();
+return contacts.find((contact)=> contact.id.value === contactId);
+}
