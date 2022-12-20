@@ -29,7 +29,7 @@ function Header({ onSearch }) {
         <input  ref={searchElementRef}
          css={css`
             padding:8px;
-        `} type="text" value={searchText} onChange={handlechange} />
+        `} type="text"  />
         <button onClick={() => onSearch(searchElementRef.current.value)}>Search</button>
       </form>
     </header>
