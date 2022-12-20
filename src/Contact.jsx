@@ -9,24 +9,23 @@ export function Contact() {
 
     return (
         <div css={css`
-            padding:40px;
+            padding:20px;
             display:flex;
             justify-content:space-around;
             align-content:center;
             border:2px solid gray;
+            border-radius:10px;
           `}>
             <div css={css`
-                    height:200px;
-                    width:30%;
-                  
-
+                    height:80%;
+                    width:40%;
             `}>
-                <img css={css`height:200px; width:90%;margin:auto; border-radius:5px;`} src={large} alt={first} />
+                <img css={css` width:90%;margin:auto; border-radius:5px; object-fit:cover;`} src={large} alt={first} />
             </div>
             <div css={css`
-                    height:200px;
-                    width:30%;
-                    
+                    height:80%;
+                    width:40%;
+                    margin-top:100px;
                     
             `}>
                 <p>Name - {title} {first} {last} </p>
