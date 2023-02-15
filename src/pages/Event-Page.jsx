@@ -1,10 +1,10 @@
 import React from 'react'
 import EventLayout from '../layouts/EventLayout'
 
-const PlayPage = () => {
+const EventPage = () => {
   return (
-    <div>PlayPage</div>
+    <div>EventPage</div>
   )
 }
 
-export default EventLayout(PlayPage)
+export default EventLayout(EventPage)

@@ -1,15 +1,10 @@
 import React from 'react'
 import DefaultLayout from '../layouts/DefaultLayout'
 
-
-
-const HomePage = () => {
-
+const VouturePage = () => {
   return (
-    <>
-      home page
-    </>
+    <div>VouturePage</div>
   )
 }
 
-export default DefaultLayout(HomePage)
+export default DefaultLayout(VouturePage)

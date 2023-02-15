@@ -1,8 +1,17 @@
 import React from 'react'
+import Navbar from "../components/Navbar/Navbar"
+import Footer from '../components/Footer/Footer'
 
-const DefaultLayout = () => {
+const DefaultLayout = (Component) =>
+({...props}) => {
+  
   return (
-    <div>DefaultLayout</div>
+
+    <div>
+      <Navbar />
+      <Component {...props} />
+      <Footer />
+    </div>
   )
 }
 

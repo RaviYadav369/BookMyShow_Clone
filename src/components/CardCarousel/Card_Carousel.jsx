@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Card_Carousel = () => {
+const CardCarousel = () => {
   return (
-    <div>Card_Carousel</div>
+    <div>CardCarousel</div>
   )
 }
 
-export default Card_Carousel
+export default CardCarousel

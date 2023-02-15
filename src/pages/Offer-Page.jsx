@@ -1,15 +1,10 @@
 import React from 'react'
 import DefaultLayout from '../layouts/DefaultLayout'
 
-
-
-const HomePage = () => {
-
+const OfferPage = () => {
   return (
-    <>
-      home page
-    </>
+    <div>OfferPage</div>
   )
 }
 
-export default DefaultLayout(HomePage)
+export default DefaultLayout(OfferPage)

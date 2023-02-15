@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../components/Navbar/Navbar'
+import EventFooter from '../components/Footer/Event_Footer'
 
-const EventLayout = () => {
+const EventLayout = (Component) =>
+({...props}) => {
   return (
-    <div>EventLayout</div>
+    <div>
+      <Navbar />
+      <Component {...props} />
+      <EventFooter />
+    </div>
   )
 }
 
