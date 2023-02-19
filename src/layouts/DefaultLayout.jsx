@@ -7,11 +7,11 @@ const DefaultLayout = (Component) =>
   
   return (
 
-    <div>
+    <>
       <Navbar />
       <Component {...props} />
       <Footer />
-    </div>
+    </>
   )
 }
 
