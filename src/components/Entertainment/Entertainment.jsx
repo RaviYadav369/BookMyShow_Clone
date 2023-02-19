@@ -2,7 +2,6 @@ import React from 'react'
 import Slider from 'react-slick';
 
 const EntertainmentCard = (props) => {
-  console.log(props.src);
   return (
     <>
       <div className='w-full h-30 px-2'>
