@@ -1,10 +1,20 @@
 import React, { useContext } from 'react'
 import { MovieContext } from '../../context/Movie-Context';
+import { Link } from 'react-router-dom';
 
-const MovieInfo = ({movie}) => {
-    const { isOpen, setisOpen, price, rentMovie, buyMovie} = useContext(MovieContext);
+const MovieInfo = ({ movie }) => {
+    const { isOpen, setisOpen, price, rentMovie, buyMovie, trailerVideo } = useContext(MovieContext);
+    console.log(trailerVideo);
 
     const genres = movie.genres?.map(({ name }) => name).join(', ');
+
+    const setAttribute = (e) => {
+        e.target.setAttribute("data-site", "YouTube")
+        const trailer = trailerVideo.filter((e) => e.type === "Trailer")
+        console.log(trailer[0]);
+        e.target.setAttribute("data-id", `${trailer[0].key}`)
+        e.target.setAttribute("data-title", "Play Trailer")
+    }
 
     return (
         <>
@@ -22,12 +32,16 @@ const MovieInfo = ({movie}) => {
                     <button className='bg-red-600 w-full py-3 text-white font-semibold rounded-lg' onClick={buyMovie}>
                         Buy ₹599
                     </button>
+
                 </div>
+                <Link to="#" className='bg-red-600 w-full py-3  text-white font-semibold rounded-lg' onClick={setAttribute} >
+                    <h4 className='text-center'>Play Trailer</h4>
+                </Link>
             </div>
 
-        
-    </>
-  )
+
+        </>
+    )
 }
 
 export default MovieInfo

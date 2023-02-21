@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import Card from "../Card/Card";
 
 const CardCarousel = (props) => {
-  console.log(props);
   const { posters, title, subtitle, isDark, config } = props;
 
   const settings = {

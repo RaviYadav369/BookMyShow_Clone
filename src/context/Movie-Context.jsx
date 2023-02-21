@@ -11,10 +11,19 @@ const MovieProvider = ({ children }) => {
         backdrop_path: '',
         poster_path: '',
     });
+    const [trailerVideo, settrailerVideo] = useState({
+        name: "",
+        key: "",
+        site: "",
+        size: 0,
+        type: "",
+        published_at: "",
+        id: ""
+    })
 
     const [isOpen, setisOpen] = useState(false);
     const [price, setprice] = useState(0);
-    
+
     const rentMovie = () => {
         setisOpen(true)
         setprice(149)
@@ -27,7 +36,7 @@ const MovieProvider = ({ children }) => {
 
     return (
 
-        <MovieContext.Provider value={{ movie, setmovie, isOpen, price, setisOpen,setprice, rentMovie, buyMovie }} >
+        <MovieContext.Provider value={{ movie, setmovie, isOpen, price, setisOpen, setprice, rentMovie, buyMovie, trailerVideo, settrailerVideo }} >
             {children}
         </MovieContext.Provider>);
 };

@@ -11,6 +11,7 @@ import { MovieContext } from '../context/Movie-Context'
 const FullMoviePage = () => {
     const { id } = useParams()
     const { movie, setmovie } = useContext(MovieContext)
+    const {trailerVideo,settrailerVideo} = useContext(MovieContext);
 
     const [cast, setcast] = useState([])
     const [similarMovies, setsimilarMovies] = useState([])
@@ -48,6 +49,17 @@ const FullMoviePage = () => {
         };
         requestMovie();
     }, [id]);
+
+    useEffect(() => {
+      const requestTrailerVideo = async()=>{
+        const getTrailerVideo = await axios.get(`/movie/${id}/videos`);
+        settrailerVideo(getTrailerVideo.data.results);
+      }
+    
+   requestTrailerVideo()
+    }, [id])
+    
+
 
     const settingsCast = {
         infinite: false,
@@ -202,7 +214,7 @@ const FullMoviePage = () => {
                     isDark={false}
                 />
             </div>
-
+            
         </>
     )
 }
