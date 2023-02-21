@@ -4,7 +4,7 @@ import { MovieContext } from '../../context/Movie-Context';
 const MovieInfo = ({movie}) => {
     const { isOpen, setisOpen, price, rentMovie, buyMovie} = useContext(MovieContext);
 
-    const genres = movie.genres?.map(({ name }) => name).join(',');
+    const genres = movie.genres?.map(({ name }) => name).join(', ');
 
     return (
         <>

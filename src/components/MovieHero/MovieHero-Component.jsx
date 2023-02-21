@@ -7,7 +7,7 @@ const MovieHeroComponent = () => {
 
     const { movie } = useContext(MovieContext);
 
-    const genres = movie.genres?.map(({ name }) => name).join(',')
+    const genres = movie.genres?.map(({ name }) => name).join(', ');
 
 
     return (
